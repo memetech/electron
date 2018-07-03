@@ -355,6 +355,8 @@ bool NativeWindow::IsMenuBarVisible() {
   return true;
 }
 
+void NativeWindow::SetWindowButtonVisibility(bool visible) {}
+
 double NativeWindow::GetAspectRatio() {
   return aspect_ratio_;
 }

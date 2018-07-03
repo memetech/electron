@@ -173,6 +173,7 @@ class TopLevelWindow : public mate::TrackableObject<TopLevelWindow>,
   void MoveTabToNewWindow();
   void ToggleTabBar();
   void AddTabbedWindow(NativeWindow* window, mate::Arguments* args);
+  void SetWindowButtonVisibility(bool visible);
   void SetAutoHideMenuBar(bool auto_hide);
   bool IsMenuBarAutoHide();
   void SetMenuBarVisibility(bool visible);

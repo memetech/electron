@@ -187,6 +187,8 @@ class NativeWindow : public base::SupportsUserData,
   virtual void ToggleTabBar();
   virtual bool AddTabbedWindow(NativeWindow* window);
 
+  virtual void SetWindowButtonVisibility(bool visible);
+
   // Toggle the menu bar.
   virtual void SetAutoHideMenuBar(bool auto_hide);
   virtual bool IsMenuBarAutoHide();

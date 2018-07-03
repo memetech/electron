@@ -757,6 +757,21 @@ describe('BrowserWindow module', () => {
     })
   })
 
+  describe('BrowserWindow.setWindowButtonVisibility()', () => {
+    before(function () {
+      if (process.platform !== 'darwin') {
+        this.skip()
+      }
+    })
+
+    it('does not throw', () => {
+      assert.doesNotThrow(() => {
+        w.setWindowButtonVisibility(true)
+        w.setWindowButtonVisibility(false)
+      })
+    })
+  })
+
   describe('BrowserWindow.setVibrancy(type)', () => {
     it('allows setting, changing, and removing the vibrancy', () => {
       assert.doesNotThrow(() => {

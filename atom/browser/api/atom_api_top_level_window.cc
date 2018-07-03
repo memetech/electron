@@ -738,6 +738,10 @@ void TopLevelWindow::AddTabbedWindow(NativeWindow* window,
     args->ThrowError("AddTabbedWindow cannot be called by a window on itself.");
 }
 
+void TopLevelWindow::SetWindowButtonVisibility(bool visible) {
+  window_->SetWindowButtonVisibility(visible);
+}
+
 void TopLevelWindow::SetAutoHideMenuBar(bool auto_hide) {
   window_->SetAutoHideMenuBar(auto_hide);
 }
@@ -1030,6 +1034,8 @@ void TopLevelWindow::BuildPrototype(v8::Isolate* isolate,
       .SetMethod("moveTabToNewWindow", &TopLevelWindow::MoveTabToNewWindow)
       .SetMethod("toggleTabBar", &TopLevelWindow::ToggleTabBar)
       .SetMethod("addTabbedWindow", &TopLevelWindow::AddTabbedWindow)
+      .SetMethod("setWindowButtonVisibility",
+                 &TopLevelWindow::SetWindowButtonVisibility)
 #endif
       .SetMethod("setAutoHideMenuBar", &TopLevelWindow::SetAutoHideMenuBar)
       .SetMethod("isMenuBarAutoHide", &TopLevelWindow::IsMenuBarAutoHide)
