@@ -112,6 +112,12 @@
                extraHeightPlusFrame);
   }
 
+  {
+    gfx::Size gfxSize(newSize);
+    shell_->NotifyWindowWillResize(&gfxSize);
+    newSize = gfxSize.ToCGSize();
+  }
+
   return newSize;
 }
 

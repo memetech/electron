@@ -194,6 +194,15 @@ void TopLevelWindow::OnWindowRestore() {
   Emit("restore");
 }
 
+void HandleWillResizeCallback(gfx::Size* new_size, gfx::Size overridden_size) {
+  *new_size = overridden_size;
+}
+
+void TopLevelWindow::OnWindowWillResize(gfx::Size* new_size) {
+  Emit("will-resize", *new_size,
+       base::Bind(&HandleWillResizeCallback, new_size));
+}
+
 void TopLevelWindow::OnWindowResize() {
   Emit("resize");
 }
